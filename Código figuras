@@ -1,0 +1,36 @@
+#include "raylib.h"
+
+int main(void)
+{
+    const int screenWidth = 800;
+    const int screenHeight = 500;
+
+    InitWindow(screenWidth, screenHeight, "Figuras geometricas");
+
+    SetTargetFPS(60);
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+        DrawCircle(120, 110, 80, BLACK);
+
+        DrawRectangle(70, 350, 220, 130, RED); 
+
+        DrawRectangle(620, 50, 150, 150, GREEN);
+
+        DrawTriangle(
+            (Vector2){680, 340},
+            (Vector2){630, 450},
+            (Vector2){730, 450},
+            PURPLE
+        );
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+
+    return 0;
+}
